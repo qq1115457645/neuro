@@ -2,7 +2,7 @@ title: 主页
 
 # [神经科学原理（第六版）](https://github.com/OpenHUTB/neuro)
 
-## <a href="pdf/00.pdf" class="image fit">内容</a> <span id="content"></span>
+## <a href="pdf/00.pdf" class="image fit">目录</a> <span id="content"></span>
 
 | 0   | 1                  | 2               | 3                   |
 |-----|--------------------|-----------------|---------------------|
@@ -86,7 +86,7 @@ title: 主页
 
 30.<a href="pdf/30.pdf" class="image fit">感觉运动控制**原理**</a>
 
-31.<a href="pdf/31.pdf" class="image fit">运动单元和**肌肉**动作（执行）</a>
+31.<a href="pdf/31.pdf" class="image fit">运动单位和**肌肉**动作（执行）</a>
 
 32.<a href="pdf/32.pdf" class="image fit">脊髓中的感觉-运动**整合** （执行）</a>
 

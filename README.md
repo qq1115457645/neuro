@@ -17,13 +17,13 @@
 
 2. **基因**和行为（进化）
 
-3. 神经**细胞**、神经**回路**和行为 
+3. 神经**细胞**、神经**回路**与行为 
 
 4. 神经回路**介导**行为的神经解剖学基础
  
 5. 行为**调节**神经回路的计算基础
 
-6. **成像**和行为（成像、方法）
+6. **成像**与行为（成像、方法）
 
 二、神经系统**细胞**的细胞生物学和分子生物学（ [细胞](https://github.com/OpenHUTB/onion/blob/master/model_repository.md#cell) ）<span id="cell"></span>
 
@@ -82,7 +82,7 @@
 
 30. 感觉运动控制**原理**
 
-31. 运动单元和**肌肉**动作（执行）
+31. 运动单位和**肌肉**动作（执行）
 
 32. 脊髓中的感觉-运动**整合** （执行）
 
@@ -167,22 +167,58 @@
 
 ### 环境搭建
 
-使用 xelatex 编译（使用之前安装 [latex](https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/) ）：
+使用 xelatex 编译（使用之前安装 [latex](https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/) ，并使用 [texstudio](https://www.texstudio.org/) 进行编辑）：
 ```shell
 xelatex.exe -synctex=1 -interaction=nonstopmode neuro.tex
 ```
 
-创建虚拟环境
-```shell
-conda create -n neuro python=3.10 --yes
-conda activate neuro
-pip install -r requirements.txt
-cd src
-python split_pdf_with_index.py
-# conda deactivate neuro
-# 删除虚拟环境（慎重）
-# conda remove -n neuro --all
-```
+* [VSCode 中 Latex Workshop 插件设置 XeLatex 编译](https://blog.csdn.net/Haulyn5/article/details/124128533)
+
+    1. （先决条件）在 VSCode 中安装 [Latex Workshop](https://github.com/shinyypig/latex-vscode-config) 插件。
+
+    2. 切换到 XeLatex 引擎编译：在 Extention 列表中找到 Latex Workshop 插件，点选齿轮状图标，打开扩展设置（Extension Settings）。
+
+    3. 在新出现的页面中的搜索栏中输入 “ tools”（注意有空格，连在一起是搜索不出来的），找到第一个点击 “Edit in settings.json”
+
+    4. 将 "args" 部分的内容按照下面的内容进行修改：
+    ```json
+    "name": "latexmk",
+    "command": "latexmk",
+    // "args": [
+    //     "-synctex=1",
+    //     "-interaction=nonstopmode",
+    //     "-file-line-error",
+    //     "-pdf",
+    //     "-outdir=%OUTDIR%",
+    //     "%DOC%"
+    // ],
+    "args": [
+        "-xelatex",
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+    ],
+    "env": {}
+    ```
+     5. Ctrl+s 保存后，再点击 VSCode 中 `.text` 文件右上角的绿色运行按钮，这是应该就替换为使用 XeLatex 编译了。
+
+     从 Latex 到 PDF：点击左侧命令行中的`Navigate, select, and edit -> SyncTeX from cursor`。或者选择“快捷键设置（Keyboard Shortcuts）”，搜索`SyncTeX from cursor`，设置快捷键（默认为 Ctrl+Alt+J ）。
+
+     从 PDF 到 Latex：按 Ctrl 的同时点击 PDF。
+
+
+* 创建虚拟环境（用于按章节切分生成的 PDF 文件）
+    ```shell
+    conda create -n neuro python=3.10 --yes
+    conda activate neuro
+    pip install -r requirements.txt
+    cd src
+    python split_pdf_with_index.py
+    # conda deactivate neuro
+    # 删除虚拟环境（慎重）
+    # conda remove -n neuro --all
+    ```
 
 ### 页面部署
 

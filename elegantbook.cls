@@ -164,6 +164,8 @@
 
 \setcounter{tocdepth}{1}
 \renewcommand{\baselinestretch}{1.2}
+% 调整段落间距
+\setlength{\parskip}{0.3em plus 0.1em minus 0.1em}
 
 \PassOptionsToPackage{no-math}{fontspec}
 \PassOptionsToPackage{quiet}{fontspec}
@@ -409,7 +411,7 @@
   bibstyle=\ELEGANT@bibstyle]{biblatex}
 
 \ifdefstring{\ELEGANT@lang}{cn}{
-  \renewcommand{\baselinestretch}{1.3}
+  \renewcommand{\baselinestretch}{1.35}
   \renewcommand{\contentsname}{目录}
   \renewcommand{\figurename}{图}
   \renewcommand{\tablename}{表}
@@ -425,7 +427,7 @@
   \newcommand\figref[1]{\textbf{图}~\ref{#1}}
   \newcommand\tabref[1]{\textbf{表}~\ref{#1}}
   \newcommand{\authorname}{\citshape 作者：}
-  \newcommand{\institutename}{\citshape 组织：}
+  \newcommand{\institutename}{\citshape 社区：}
   \newcommand{\datename}{\citshape 时间：}
   \newcommand{\versionname}{\citshape 版本：}
   \newcommand{\notename}{笔记}
